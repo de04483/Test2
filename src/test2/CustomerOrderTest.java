@@ -53,17 +53,22 @@ public class CustomerOrderTest {
  	    assertEquals(9, inventory.getItemStock("Pepperoni Pizza"));
  	}
 
-	/// TODO: Test low stock alert
- 	// Reduce the stock of an item and verify that the system triggers a low stock alert when the quantity falls below the threshold.
-
- 	@Test
+     @Test
  	public void testLowStockAlert() {
  	    inventory.updateStock("Garlic Bread", 13);  // Only 2 left after this
  	    assertTrue(inventory.isLowStock("Garlic Bread"));
  	}
 
-	// ToDo: Test order status updates
-	// Set the status of the order and verify that the status is updated correctly.
+ 	// TODO: Test order status updates
+ 	// Set the status of the order and verify that the status is updated correctly.
+
+ 	@Test
+ 	public void testOrderStatusUpdate() {
+ 	    order.addItem("Cheese Pizza", 10.00);
+ 	    order.setStatus("Ready");
+ 	    assertEquals("Ready", order.getStatus());
+ 	}
+
+ }
 
 
-}
